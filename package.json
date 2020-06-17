@@ -1,6 +1,6 @@
 {
   "name": "@hoprnet/hopr-demo-seeds",
-  "version": "1.0.1",
+  "version": "1.0.2-refactor.8aad1dd",
   "description": "Demo seeds for HOPR testing",
   "license": "GPL-3.0-only",
   "scripts": {
