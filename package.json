@@ -23,8 +23,8 @@
     "messaging"
   ],
   "engines": {
-    "node": "^12",
-    "yarn": "^1.22"
+    "node": "12.9.1",
+    "yarn": "1.19.2"
   },
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
