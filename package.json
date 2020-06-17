@@ -1,6 +1,6 @@
 {
   "name": "@hoprnet/hopr-demo-seeds",
-  "version": "1.0.1",
+  "version": "1.0.2-refactor.8aad1dd",
   "description": "Demo seeds for HOPR testing",
   "license": "GPL-3.0-only",
   "scripts": {
@@ -8,10 +8,6 @@
     "test": "echo '✅ No tests needed'",
     "build": "tsc -d -p .",
     "prepare": "yarn build"
-  },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://npm.pkg.github.com/"
   },
   "files": [
     "lib",
