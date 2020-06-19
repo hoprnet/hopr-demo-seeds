@@ -24,7 +24,7 @@
   },
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
-  "homepage": "https://hoprnet.io",
+  "homepage": "https://hoprnet.org",
   "repository": {
     "type": "git",
     "url": "https://github.com/hoprnet/hopr-demo-seeds.git"
