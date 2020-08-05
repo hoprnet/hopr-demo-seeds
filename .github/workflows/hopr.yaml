@@ -39,7 +39,7 @@ jobs:
   publish:
     name: Publish (NPM, Github)
 
-    if: github.event_name == 'push' && github_ref == 'refs/heads/master'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
     needs: build
     runs-on: ubuntu-latest
 
