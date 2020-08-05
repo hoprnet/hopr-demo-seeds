@@ -1,22 +1,14 @@
 name: HOPR Workflow
-on:
-  push:
-    branches:
-      - 'feature/**'
-    tags:
-      - 'v*'
-  pull_request:
-    branches: [master, develop]
+on: [push, pull_request]
 
 jobs:
   build:
-    name: Build & Test
+    name: Build, Test
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        node-version: [12.9.1]
-        yarn-version: [1.19.2]
+        node-version: [12.x, 14.x]
 
     steps:
       - name: Checkout repository
