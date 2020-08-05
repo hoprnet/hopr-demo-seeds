@@ -1,3 +1,4 @@
+name: HOPR Workflow
 on:
   push:
     branches:
