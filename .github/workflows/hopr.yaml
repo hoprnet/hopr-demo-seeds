@@ -36,8 +36,8 @@ jobs:
         run: |
           yarn test
 
-  publish_core_npm:
-    name: Publish (NPM)
+  publish:
+    name: Publish (NPM, Github)
 
     if: github.event_name == 'push' && github_ref == 'refs/heads/master'
     needs: build
