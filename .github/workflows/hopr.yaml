@@ -80,3 +80,35 @@ jobs:
         run: npm version major
       - name: Commit back to master
         run: git push origin master
+      - name: Push a tag
+        run: (PACKAGE_VERSION=$(node -p -e "require('./package.json').version"); git tag $PACKAGE_VERSION && git push origin $PACKAGE_VERSION)
+      - name: NPM Publish
+        run: npm publish
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+
+  publish_patch:
+    name: Publish Patch Version Bump in Master (NPM, Github)
+    needs: build
+    if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true && contains(github.event.pull_request.labels.*.name, 'patch')
+
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Master
+        run: git fetch origin && git checkout master
+      - name: Set name / email for commit
+        run: git config --global user.email "noreply@hoprnet.org" && git config --global user.name "HOPR Versioning robot"
+      - name: Bump package.json
+        run: npm version patch
+      - name: Commit back to master
+        run: git push origin master
+      - name: Push a tag
+        run: (PACKAGE_VERSION=$(node -p -e "require('./package.json').version"); git tag $PACKAGE_VERSION && git push origin $PACKAGE_VERSION)
+      - name: NPM Publish
+        run: npm publish
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
