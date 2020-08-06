@@ -6,12 +6,12 @@ on:
 
 jobs:
   release:
-    name: Release github version
+    name: Release github version 
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
-      - name: Github release
+      - name: Github release ${{ github.ref }}
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
