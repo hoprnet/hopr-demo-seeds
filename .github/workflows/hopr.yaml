@@ -59,7 +59,7 @@ jobs:
       - name: Push a tag
         run: (PACKAGE_VERSION=$(node -p -e "require('./package.json').version"); git tag $PACKAGE_VERSION && git push origin $PACKAGE_VERSION)
       - name: NPM Publish
-        run: npm publish
+        run: npm publish --access public
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -84,7 +84,7 @@ jobs:
       - name: Push a tag
         run: (PACKAGE_VERSION=$(node -p -e "require('./package.json').version"); git tag $PACKAGE_VERSION && git push origin $PACKAGE_VERSION)
       - name: NPM Publish
-        run: npm publish
+        run: npm publish --access public
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
