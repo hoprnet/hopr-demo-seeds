@@ -49,6 +49,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
+        with:
+          node-version: '12'
       - name: Use Master
         run: git fetch origin && git checkout master
       - name: Set name / email for commit
@@ -75,6 +77,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
+        with:
+          node-version: '12'
       - name: Use Master
         run: git fetch origin && git checkout master
       - name: Set name / email for commit
@@ -102,6 +106,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
+        with:
+          node-version: '12'
       - name: Use Master
         run: git fetch origin && git checkout master
       - name: Set name / email for commit
