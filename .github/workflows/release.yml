@@ -7,6 +7,8 @@ on:
 jobs:
   release:
     name: Release github version
+    runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v2
       - name: Github release
