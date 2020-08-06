@@ -67,7 +67,7 @@ jobs:
   publish_major:
     name: Publish Major Version Bump in Master (NPM, Github)
     needs: build
-    if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true && contains(github.event.pull_request.labels.*.name, 'major')
+    if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true && contains(github.event.pull_request.labels.*.name, 'Major')
 
     runs-on: ubuntu-latest
     steps:
@@ -92,7 +92,7 @@ jobs:
   publish_patch:
     name: Publish Patch Version Bump in Master (NPM, Github)
     needs: build
-    if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true && contains(github.event.pull_request.labels.*.name, 'patch')
+    if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true && contains(github.event.pull_request.labels.*.name, 'Patch')
 
     runs-on: ubuntu-latest
     steps:
